@@ -29,6 +29,7 @@
     mkShellFromeImage = name: value: let
       piePackages = value.config.environment.systemPackages;
     in pkgs.mkShell {
+      inherit name;
       # `clang-tools` needs to be included before `clang` because they both
       # expose a `clangd` binary (and other tools from the clang family), but
       # the version from the `clang` package is broken (not wrapped for nix or
