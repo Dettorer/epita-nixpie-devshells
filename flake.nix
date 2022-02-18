@@ -26,7 +26,7 @@
       (descPath: mkMinimalNixpieImage (import descPath))
     );
 
-    mkShellFromeImage = name: value: let
+    mkShellFromImage = name: value: let
       piePackages = value.config.environment.systemPackages;
     in pkgs.mkShell {
       inherit name;
@@ -38,7 +38,7 @@
     };
   in
   {
-    devShells.x86_64-linux = builtins.mapAttrs mkShellFromeImage minimalNixpieImages;
+    devShells.x86_64-linux = builtins.mapAttrs mkShellFromImage minimalNixpieImages;
 
     # Default shell used when calling `nix develop` with no other argument
     devShell.x86_64-linux = self.devShells.x86_64-linux.ing1;
