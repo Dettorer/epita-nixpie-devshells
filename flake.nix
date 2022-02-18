@@ -33,7 +33,7 @@
       # expose a `clangd` binary (and other tools from the clang family), but
       # the version from the `clang` package is broken (not wrapped for nix or
       # something like that).
-      buildInputs = [ pkgs.clang-tools ] ++ piePackages;
+      packages = [ pkgs.clang-tools ] ++ piePackages;
     };
   in
   {
