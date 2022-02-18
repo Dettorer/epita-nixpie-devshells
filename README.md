@@ -2,18 +2,25 @@
 
 Nix devShells that mirror the tools available on the PIE
 
+## Available shells
+
+- [`ing1`](./ing1.nix) (core PIE packages + nixos-pie specific packages except podman)
+- [`spe`](./spe.nix) (core PIE packages + nixos-spe specific packages)
+- [`sup`](./sup.nix) (core PIE packages + nixos-sup specific packages)
+
 ## Usage
 
-Only one devShell is available now, which mirrors the "nixos-pie" image (image
-used by ING1 students) with core, dev, asm, thl and tiger package bundles. To
-use it, call `nix develop`:
+To enter one of the development shells listed above, call `nix develop '.#<shell
+name>'`. For example, to enter a development shell with the same tools as the
+nixos-sup PIE image:
 
 ```console
-$ nix develop '.#ing1'
+$ nix develop '.#sup'
 bash 5.1$
 ```
 
-Or, since it's the current default devShell:
+The default devShell is `ing1`, so calling `nix develop` will enter the
+`nixos-pie`-like environment by default.
 
 ```console
 $ nix develop
