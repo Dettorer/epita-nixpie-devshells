@@ -6,10 +6,11 @@
   # https://gitlab.cri.epita.fr/cri/infrastructure/nixpie/-/tree/master/modules/packages/pkgs
   wantedModules = {
     cri.packages.pkgs = {
+      afit.enable = true;
+      core.enable = true;
+      csharp.enable = true;
       dev.enable = true;
       ocaml.enable = true;
-      afit.enable = true;
-      csharp.enable = true;
     };
   };
 }

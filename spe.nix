@@ -7,6 +7,7 @@
   wantedModules = {
     cri.packages.pkgs = {
       asm.enable = true;
+      core.enable = true;
       dev.enable = true;
       gtk.enable = true;
       rust.enable = true;
