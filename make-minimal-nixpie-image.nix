@@ -18,9 +18,19 @@ let
 
     # Define the attribute sets used by nixpie modules
     options = {
-      # For modules that use `environment.systemPackages`
-      environment = lib.mkOption {
-        type = lib.types.attrs;
+      # For modules that use `environment`, most importantly
+      # `environment.systemPackages`
+      environment = {
+        sessionVariables = lib.mkOption {
+          type = lib.types.attrs;
+        };
+        systemPackages = lib.mkOption {
+          type = lib.types.listOf lib.types.package;
+          default = [];
+        };
+        variables = lib.mkOption {
+          type = lib.types.attrs;
+        };
       };
       # For modules that use `programs.*.enable`
       programs = lib.mkOption {
